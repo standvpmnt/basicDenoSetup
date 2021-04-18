@@ -1,5 +1,6 @@
 import { Application, config, log, send } from "./deps.ts";
 import { requestLogger, responseTimeHeader } from "./utils/setup_utils.ts";
+import router from "./routes.ts";
 
 config({ safe: true });
 
@@ -60,9 +61,12 @@ app.use(async (ctx, next) => {
   }
 });
 
-// Hello World!
-app.use((ctx) => {
-  ctx.response.body = "Hello World!";
-});
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+// // Hello World!
+// app.use((ctx) => {
+//   ctx.response.body = "Hello World!";
+// });
 
 await app.listen({ port: parseInt(config()["PORT"]) });
