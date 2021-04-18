@@ -9,3 +9,7 @@ export {
   assert,
   assertEquals,
 } from "https://deno.land/std@0.93.0/testing/asserts.ts";
+export {
+  bench,
+  runBenchmarks,
+} from "https://deno.land/std@0.93.0/testing/bench.ts";
