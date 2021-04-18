@@ -2,7 +2,7 @@
   "$schema": "https://deno.land/x/denon@2.4.7/schema.json",
   "scripts": {
     "start": {
-      "cmd": "deno test && deno fmt && deno run --allow-net --allow-env --allow-read --allow-write mod.ts ",
+      "cmd": "deno test --unstable && deno fmt && deno run --allow-net --allow-env --allow-read --allow-write --unstable mod.ts ",
       "desc": "run my mod.ts file"
     }
   }
