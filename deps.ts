@@ -13,3 +13,10 @@ export {
   bench,
   runBenchmarks,
 } from "https://deno.land/std@0.93.0/testing/bench.ts";
+export { v4 } from "https://deno.land/std@0.93.0/uuid/mod.ts";
+export {
+  Database,
+  DataTypes,
+  Model,
+  PostgresConnector,
+} from "https://deno.land/x/denodb@v1.0.28/mod.ts";
