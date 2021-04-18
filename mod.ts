@@ -47,16 +47,13 @@ app.use(responseTimeHeader);
 
 app.use(async (ctx, next) => {
   const filePath = ctx.request.url.pathname;
-  const fileWhitelist = [
-    "/index.html",
-    "/dynamo.html",
-  ];
+  const fileWhitelist = ["/index.html", "/dynamo.html"];
   if (fileWhitelist.includes(filePath)) {
     await send(ctx, filePath, {
       root: `${Deno.cwd()}/public`,
     });
   } else {
-    next();
+    await next();
   }
 });
 
