@@ -1,7 +1,7 @@
 import { Application, config, log, send } from "./deps.ts";
-import {responseTimeHeader, requestLogger} from "./utils/setup_utils.ts";
+import { requestLogger, responseTimeHeader } from "./utils/setup_utils.ts";
 
-config({safe: true});
+config({ safe: true });
 
 const app = new Application();
 await log.setup({
@@ -27,11 +27,10 @@ await log.setup({
     },
   },
 });
-export const logger = log.getLogger();
 
 // handling error from any of the middlewares
 app.addEventListener("error", (event) => {
-  logger.error(event.error);
+  log.error(event.error);
 });
 
 app.use(async (ctx, next) => {
