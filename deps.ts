@@ -20,3 +20,4 @@ export {
   Model,
   PostgresConnector,
 } from "https://deno.land/x/denodb@v1.0.28/mod.ts";
+export { renderFile } from "https://deno.land/x/dejs@0.9.3/mod.ts";

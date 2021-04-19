@@ -5,5 +5,12 @@
       "cmd": "deno test && deno fmt && deno run --allow-net --allow-env --allow-read --allow-write mod.ts ",
       "desc": "run my mod.ts file"
     }
+  },
+  "watcher": {
+    "interval": 350,
+    "exts": ["js", "jsx", "ts", "tsx", "json", "ejs"],
+    "match": ["**/*.*"],
+    "skip": ["*/.git/*"],
+    "legacy": false
   }
 }

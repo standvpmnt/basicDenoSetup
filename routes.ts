@@ -4,6 +4,7 @@ import {
   addBookTodbAction,
   bookIndexAction,
 } from "./controllers/booksController.ts";
+import { showHTMLTemplate } from "./controllers/showDataController.ts";
 
 const router = new Router();
 
@@ -18,9 +19,6 @@ router
   })
   .get("/add_book", addBookTodbAction);
 
-router.get("/check_this_out", (context) => {
-  context.response.body =
-    `This page also exists! Just imagine the possibilities now!`;
-});
+router.get("/check_this_out", showHTMLTemplate);
 
 export default router;
