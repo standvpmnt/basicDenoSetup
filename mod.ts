@@ -58,6 +58,18 @@ app.use(async (ctx, next) => {
   }
 });
 
+app.use(async (ctx, next) => {
+  const filePath = ctx.request.url.pathname;
+  const fileWhitelist = ["/main.css"];
+  if (fileWhitelist.includes(filePath)) {
+    await send(ctx, filePath, {
+      root: `${Deno.cwd()}/static`,
+    });
+  } else {
+    await next();
+  }
+});
+
 app.use(router.routes());
 app.use(router.allowedMethods());
 

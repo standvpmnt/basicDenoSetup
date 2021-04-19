@@ -1,3 +1,4 @@
-<%- await include('./views/layout/header.ejs', { pageTitle: 'AWAY!' }) %>
+<%- await include('./views/layout/header.ejs', { pageTitle: 'AWAY!', styles: ["/main.css"] }) %>
+<link rel="stylesheet" href="/main.css">
 <h1>This is hello from templating engine!</h1>
 <%- await include('./views/layout/footer.ejs') %>
